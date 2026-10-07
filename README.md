@@ -5,8 +5,7 @@
 </p>
 
 ---
-
-## 🛠️ Tecnologias
+##
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=html,cpp,python,java" alt="HTML, C++, Python e Java" />
@@ -14,7 +13,7 @@
 
 ---
 
-## 📫 Contato
+## 
 
 <p align="center">
   <a href="https://www.linkedin.com/in/david-mota-7a07b1338/" target="_blank">
