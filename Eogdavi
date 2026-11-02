@@ -1,73 +1,35 @@
-<div align="center">
+name: Gerar Pac-Man das contribuições
 
-<pre>
-██████╗  █████╗ ██╗   ██╗██╗██████╗
-██╔══██╗██╔══██╗██║   ██║██║██╔══██╗
-██║  ██║███████║██║   ██║██║██║  ██║
-██║  ██║██╔══██║╚██╗ ██╔╝██║██║  ██║
-██████╔╝██║  ██║ ╚████╔╝ ██║██████╔╝
-╚═════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═════╝
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
-███╗   ███╗ ██████╗ ████████╗ █████╗
-████╗ ████║██╔═══██╗╚══██╔══╝██╔══██╗
-██╔████╔██║██║   ██║   ██║   ███████║
-██║╚██╔╝██║██║   ██║   ██║   ██╔══██║
-██║ ╚═╝ ██║╚██████╔╝   ██║   ██║  ██║
-╚═╝     ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝
-</pre>
+permissions:
+  contents: write
 
-──────────────────────────────
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Gerar o SVG do Pac-Man
+        uses: abozanona/pacman-contribution-graph@main
+        with:
+          github_user_name: ${{ github.repository_owner }}
 
-**Curso:** Análise e Desenvolvimento de Sistemas • UNICID<br>
-**Foco:** Desenvolvimento de Software e Dados<br>
-**Estudando:** Python • Java • AWS • Banco de Dados
+      - name: Enviar para a branch output
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+## 🎮 Minhas contribuições
 
-</div>
-
----
-
-## 📌 Sobre mim
-
-Olá! Sou o **David Mota Marques**, estudante de Análise e Desenvolvimento de Sistemas na Unicid, em São Paulo. Tenho interesse em desenvolvimento de software, dados e computação em nuvem, e estou construindo meu caminho na área criando projetos práticos e documentando tudo aqui no GitHub.
-
-Busco uma oportunidade de **estágio em TI**, onde eu possa aplicar o que já aprendi, crescer junto com profissionais da área e contribuir com soluções reais.
-
----
-
-## 🛠️ Tecnologias
-
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=html,css,python,java,cpp,git,github,aws" alt="Tecnologias" />
-
-</div>
-
----
-
-## 🚀 Projetos em destaque
-
-- 🎯 [Jogo de Adivinhação de Número](https://github.com/eogdavi/jogo-adivinhacao-python): jogo de terminal em Python com níveis de dificuldade
-- 🟡 Pac-Man em Python (pygame)
-
----
-
-## 📫 Contato
-
-<div align="center">
-
-<a href="https://www.linkedin.com/in/david-mota-7a07b1338/" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-</a>
-<a href="mailto:mota90764@gmail.com">
-  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
-</a>
-
-</div>
-
----
-
-<div align="center">
-
-![Pac-Man comendo minhas contribuições](https://raw.githubusercontent.com/eogdavi/eogdavi/output/pacman-contribution-graph-dark.svg)
-
-</div>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="htt…
