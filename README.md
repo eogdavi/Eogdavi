@@ -1,28 +1,28 @@
-name: Pac-Man contribution graph
+<h1 align="center">Olá, eu sou o David Mota Marques 👋</h1>
 
-on:
-  schedule:
-    - cron: "0 */12 * * *"
-  workflow_dispatch:
+<p align="center">
+  Bem-vindo ao meu perfil! Aqui eu compartilho meus projetos e estudos em programação.
+</p>
 
-permissions:
-  contents: write
+---
+##
 
-jobs:
-  generate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,cpp,python,java" alt="HTML, C++, Python e Java" />
+</p>
 
-      - name: Gerar o gráfico do Pac-Man
-        uses: abozanona/pacman-contribution-graph@main
-        with:
-          github_user_name: ${{ github.repository_owner }}
+---
 
-      - name: Enviar para a branch output
-        uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+## 
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/david-mota-7a07b1338/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="mailto:mota90764@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+  </a>
+</p>
+
+  </g>
+</svg>
